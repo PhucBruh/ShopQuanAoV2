@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="QuanAoPro">
+  <BOModel>
+    <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser" Caption="Base User" />
+  </BOModel>
+  <NavigationItems>
+    <Items>
+      <Item Id="@17cf187e-ab04-497c-83da-42da802fc79a" Caption="Quản lý" ImageName="BO_Sale" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="@4568756d-1a8f-476a-acde-9b3abf9e05e5" ViewId="LoHang_ListView" Caption="Lô hàng" IsNewNode="True" />
+          <Item Id="@89668dbb-2166-4822-9f65-666d67fde508" ViewId="HoaDon_ListView" Caption="Hóa đơn" IsNewNode="True" />
+          <Item Id="@e7b67160-0719-4ddd-b674-ea38e0193199" ViewId="NhaCungCap_ListView" Caption="Nhà cung cấp" IsNewNode="True" />
+          <Item Id="@f8a978cd-2c16-435f-8621-a8c1a3fdfbf9" Caption="Sản phẩm" ViewId="ChiTietHoaDon_DetailView" IsNewNode="True" />
+          <Item Id="@fe1dea91-d9ef-444b-8f98-1526ab49c8e8" ViewId="ChiTietSanPham_ListView" Caption=" Chi tiết sản phẩm" IsNewNode="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Options>
+    <LayoutManagerOptions RequiredFieldMark="*" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="24.1.3.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="ApplicationUser_ListView" Caption="Users" />
+    <DetailView Id="ChiTietHoaDon_DetailView">
+      <Items>
+        <PropertyEditor Id="id_lo_hang" LookupProperty="id_chi_tiet_san_pham.id_san_pham.ten" />
+        <PropertyEditor Id="so_luong_con_lai" PropertyName="id_lo_hang" View="" LookupProperty="so_luong_con_lai" Caption="so_luong_con_lai" AllowEdit="False" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="ChiTietHoaDon">
+              <LayoutItem Id="id_lo_hang" SizeConstraintsType="Default" />
+              <LayoutItem Id="so_luong_con_lai" ViewItem="so_luong_con_lai" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="ChiTietHoaDon_ListView" AllowEdit="True">
+      <Columns>
+        <ColumnInfo Id="so_luong" Width="344" SortOrder="Ascending" />
+        <ColumnInfo Id="don_gia" Index="1" />
+        <ColumnInfo Id="thanh_tien" Index="2" />
+      </Columns>
+    </ListView>
+    <ListView Id="ChiTietSanPham_ListView">
+      <Columns>
+        <ColumnInfo Id="id_san_pham" Index="0" Width="243" />
+        <ColumnInfo Id="id_mau_san_pham" Index="1" Width="250" LookupProperty="ten" Caption="ten_mau" />
+        <ColumnInfo Id="ma_mau" PropertyName="id_mau_san_pham" View="" SortIndex="0" SortOrder="Ascending" Index="1" Width="250" LookupProperty="ma_mau" AllowEdit="False" Caption="ma_mau" IsNewNode="True" />
+        <ColumnInfo Id="id_kich_co_san_pham" Index="2" Width="309" Caption="ten_kich_co" />
+        <ColumnInfo Id="kich_co" PropertyName="id_kich_co_san_pham" View="" Index="2" Width="309" LookupProperty="kich_co" AllowEdit="False" Caption="kich_co" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <ListView Id="ChiTietSanPham_LoHangs_ListView">
+      <Columns>
+        <ColumnInfo Id="mo_ta" Width="216" />
+      </Columns>
+    </ListView>
+    <DetailView Id="HoaDon_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="ChiTietHoaDons_Group">
+            <LayoutItem Id="ChiTietHoaDons" SizeConstraintsType="Default" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="HoaDon_ListView" AllowEdit="False" NewItemRowPosition="Top" />
+    <ListView Id="KichCoSanPham_ListView" NewItemRowPosition="Top" />
+    <DetailView Id="LoHang_DetailView">
+      <Items>
+        <PropertyEditor Id="id_chi_tiet_san_pham" LookupProperty="id_san_pham.ten" />
+        <PropertyEditor Id="id_nha_cung_cap" PropertyName="id_nha_cung_cap" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="LoHang">
+              <LayoutGroup Id="LoHang_col1">
+                <LayoutItem Id="so_luong_con_lai" Index="1" />
+                <LayoutItem Id="id_nha_cung_cap" Index="2" Removed="True" />
+                <LayoutItem Id="mo_ta" ViewItem="mo_ta" ShowCaption="" Index="2" IsNewNode="True" />
+                <LayoutItem Id="ngay_cap_nhat" Index="4" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="LoHang_col2">
+                <LayoutItem Id="id_nha_cung_cap" Index="2" ViewItem="id_nha_cung_cap" ShowCaption="" IsNewNode="True" />
+                <LayoutItem Id="ngay_nhap" ViewItem="ngay_nhap" ShowCaption="" Index="3" IsNewNode="True" Removed="True" />
+                <LayoutItem Id="ngay_cap_nhat" Index="4" ViewItem="ngay_cap_nhat" ShowCaption="" IsNewNode="True" />
+                <LayoutItem Id="mo_ta" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="ChiTietHoaDons_Group" Removed="True" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="LoHang_ListView" AllowEdit="False" NewItemRowPosition="Top" MasterDetailMode="ListViewOnly" MasterDetailView="LoHang_DetailView">
+      <Columns>
+        <ColumnInfo Id="so_luong_nhap" Index="0" />
+        <ColumnInfo Id="so_luong_con_lai" Index="1" />
+        <ColumnInfo Id="id_chi_tiet_san_pham" Index="2" />
+        <ColumnInfo Id="id_nha_cung_cap" Index="3" />
+        <ColumnInfo Id="ngay_cap_nhat" Index="4" />
+        <ColumnInfo Id="mo_ta" Index="5" />
+        <ColumnInfo Id="ngay_nhap" Index="6" />
+      </Columns>
+    </ListView>
+    <ListView Id="MauSanPham_ListView" NewItemRowPosition="Top" />
+    <ListView Id="NhaCungCap_ListView" NewItemRowPosition="Top" AllowEdit="True" />
+    <DetailView Id="SanPham_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="ChiTietSanPhams_Group" Caption="Chi Tiet San Pham" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="SanPham_ListView" NewItemRowPosition="Top" AllowEdit="True" />
+  </Views>
+</Application>
