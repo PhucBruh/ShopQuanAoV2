@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="QuanAoPro">
+  <BOModel>
+    <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser" Caption="Base User" />
+  </BOModel>
+  <NavigationItems>
+    <Items>
+      <Item Id="@17cf187e-ab04-497c-83da-42da802fc79a" Caption="Quản lý" ImageName="BO_Sale" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="@4568756d-1a8f-476a-acde-9b3abf9e05e5" ViewId="LoHang_ListView" Caption="Lô hàng" IsNewNode="True" />
+          <Item Id="@89668dbb-2166-4822-9f65-666d67fde508" ViewId="HoaDon_ListView" Caption="Hóa đơn" IsNewNode="True" />
+          <Item Id="@e7b67160-0719-4ddd-b674-ea38e0193199" ViewId="NhaCungCap_ListView" Caption="Nhà cung cấp" IsNewNode="True" />
+          <Item Id="@f8a978cd-2c16-435f-8621-a8c1a3fdfbf9" Caption="Sản phẩm" ViewId="ChiTietHoaDon_DetailView" IsNewNode="True" />
+          <Item Id="@fe1dea91-d9ef-444b-8f98-1526ab49c8e8" ViewId="ChiTietSanPham_ListView" Caption=" Chi tiết sản phẩm" IsNewNode="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Options>
+    <LayoutManagerOptions RequiredFieldMark="*" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="24.1.3.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="ApplicationUser_ListView" Caption="Users" />
+    <ListView Id="ChiTietHoaDon_ListView" AllowEdit="True" />
+    <ListView Id="HoaDon_ListView" AllowEdit="True" NewItemRowPosition="Top" />
+    <ListView Id="KichCoSanPham_ListView" NewItemRowPosition="Top" />
+    <ListView Id="LoHang_ListView" AllowEdit="True" NewItemRowPosition="Top" />
+    <ListView Id="MauSanPham_ListView" NewItemRowPosition="Top" />
+    <ListView Id="NhaCungCap_ListView" NewItemRowPosition="Top" />
+    <ListView Id="SanPham_ListView" NewItemRowPosition="Top" AllowEdit="True" />
+  </Views>
+</Application>

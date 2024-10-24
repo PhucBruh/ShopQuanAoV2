@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <NavigationItems NavigationStyle="Accordion">
+    <Items>
+      <Item Id="@17cf187e-ab04-497c-83da-42da802fc79a">
+        <Items>
+          <Item Id="@f8a978cd-2c16-435f-8621-a8c1a3fdfbf9" ViewId="SanPham_ListView" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Options UIType="TabbedMDI" RestoreTabbedMdiLayout="False" ShowTabImage="True" />
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="24.1.3.0" IsNewNode="True" />
+  </SchemaModules>
+</Application>
