@@ -64,7 +64,7 @@
     <DetailView Id="HoaDon_DetailView">
       <Layout>
         <LayoutGroup Id="Main">
-          <LayoutGroup Id="ChiTietHoaDons_Group">
+          <LayoutGroup Id="ChiTietHoaDons_Group" Caption="Chi Tiet Hoa Don">
             <LayoutItem Id="ChiTietHoaDons" SizeConstraintsType="Default" />
           </LayoutGroup>
         </LayoutGroup>
@@ -111,6 +111,13 @@
       </Columns>
     </ListView>
     <ListView Id="MauSanPham_ListView" NewItemRowPosition="Top" />
+    <DetailView Id="NhaCungCap_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="LoHangs_Group" Caption="Lo Hang" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <ListView Id="NhaCungCap_ListView" NewItemRowPosition="Top" AllowEdit="True" />
     <DetailView Id="SanPham_DetailView">
       <Layout>

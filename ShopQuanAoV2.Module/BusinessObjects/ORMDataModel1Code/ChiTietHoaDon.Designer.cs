@@ -13,8 +13,11 @@ using DevExpress.Data.Filtering;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Reflection;
+using DevExpress.Persistent.Base;
 namespace ShopQuanAoV2.Module.BusinessObjects.ORMDataModel1
 {
+
+    [DefaultClassOptions]
 
     [DefaultProperty("so_luong")]
     public partial class ChiTietHoaDon : DevExpress.Persistent.BaseImpl.BaseObject
