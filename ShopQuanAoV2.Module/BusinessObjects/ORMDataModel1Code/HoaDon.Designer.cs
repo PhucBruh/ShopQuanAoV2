@@ -21,7 +21,7 @@ namespace ShopQuanAoV2.Module.BusinessObjects.ORMDataModel1
     {
         DateTime fngay_tao;
         [DevExpress.ExpressApp.Model.ModelDefault("EditMask", "dd/MM/yyyy HH:mm"),
-DevExpress.ExpressApp.Model.ModelDefault("DisplayFormat", "{0:dd/MM/yyyy HH:mm}")]
+        DevExpress.ExpressApp.Model.ModelDefault("DisplayFormat", "{0:dd/MM/yyyy HH:mm}")]
         public DateTime ngay_tao
         {
             get { return fngay_tao; }
